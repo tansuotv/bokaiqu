@@ -20,8 +20,33 @@
   <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/tansuotv/bokaiqu@master/favicon.ico">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tansuotv/bokaiqu@master/Noisky_files/font-awesome.lite.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tansuotv/bokaiqu@master/Noisky_files/main.min.css">
+  <style>
+ #bg {
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ z-index: -1;
+ }
+ </style>
 </head>
 <body>
+   <div id="bg"></div>
+ <script>
+ var bgImages = [
+ "https://cdn.jsdelivr.net/gh/tansuotv/bokaiqu@master/img/bg-0.jpg",
+ "https://cdn.jsdelivr.net/gh/tansuotv/bokaiqu@master/img/bg-1.jpg",
+ "https://cdn.jsdelivr.net/gh/tansuotv/bokaiqu@master/img/bg-2.jpg",
+ // ...其他图片路径
+ ];
+
+ window.onload = function () {
+ var bg = document.getElementById("bg");
+ var randomIndex = Math.floor(Math.random() * bgImages.length);
+ bg.style.backgroundImage = "url(" + bgImages[randomIndex] + ")";
+ };
+ </script>
 <!--
 作者：饭饭
 时间：2018.11.27
@@ -33,7 +58,7 @@
         <i class="fa fa-angle-up btn-mobile-close_icon hidden"></i>
     </span>
 <!-- 随机背景图片 -->
-<header class="panel-cover"></header>
+<!-- <header class="panel-cover"></header> -->
 <!-- 必应每日背景图片
 <header class="panel-cover" style="background-image: url('https://api.ffis.me/bing/bing-images.php')"></header> -->
 <!-- 饭饭的随机背景图片api
